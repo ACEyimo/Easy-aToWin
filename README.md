@@ -52,7 +52,7 @@
 ## 文件名以“-”符号分割，共有五个属性：
 <center>
 <b><span style="color:blue">类型</span>-<span style="color:red">型号</span>-<span style="color:green">输入值</span>-<span style="color:orange">占位符</span>-<span style="color:purple">版本</span>.zip</b><br>
-<span style="color:blue">part</span>-<span style="color:red">enchilada</span>-<span style="color:green">auto</span>-<span style="color:orange">null</span>-<span style="color:purple">beta1.4</span>.zip</center>
+<span style="color:blue">part</span>-<span style="color:red">enchilada</span>-<span style="color:green">auto</span>-<span style="color:orange">null</span>-<span style="color:purple">beta1.4</span>.zip</center>  
 <span style="color:blue">flash</span>-<span style="color:red">enchilada</span>-<span style="color:green">Win11_23H3_v2.0rc2</span>-<span style="color:orange">null</span>-<span style="color:purple">beta1.4</span>.zip
 
 ---
