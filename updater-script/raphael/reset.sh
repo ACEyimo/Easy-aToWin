@@ -27,7 +27,7 @@ sleep 1
 ui_print "- 正在恢复分区..."
 ui_print "- Restoring partitions..."
 # 下面这行需要手动修改，否则会影响auto模式的执行
-re_part userdata_number userdata_start || echo "执行错误会直接退出，所以这段命令永远不会被执行。Execution errors will result in a direct exit, so this command will not be executed"
+re_part 31 2080375kB || echo "执行错误会直接退出，所以这段命令永远不会被执行。Execution errors will result in a direct exit, so this command will not be executed"
 
 assert_equal "${FILE_NAME[3]}" "yes" && {
     if ${cpAboot_status}; then 
