@@ -8,6 +8,10 @@ PRODUCT=$1
 VERSION=$2
 USE_binary=""
 
+if [[ -z "$2"  || -z "$1" ]]; then
+    echo "参数错误，请检查"
+    exit 1
+fi
 if [[ -z "$3" ]]; then
     USE_binary="${WORKPATH}update-binary/new.sh"
 else

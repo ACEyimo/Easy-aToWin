@@ -1,0 +1,5 @@
+flash xiaomi-raphael.img
+reset sgdisk-64G.bak
+reset sgdisk-128G.bak
+reset sgdisk-256G.bak
+reset sgdisk-512G.bak
