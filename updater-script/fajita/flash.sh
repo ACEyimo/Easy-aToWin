@@ -3,8 +3,6 @@ ui_print "#       Windwos刷写包-${FILE_NAME[4]}"
 ui_print "#       Windows Flash-${FILE_NAME[4]}"
 ui_print "########################################"
 ui_print "#   The update-script by 亦魔/Yemon     "
-ui_print "#   QQ/Email: 248807316/ACEyimo@qq.com  "
-ui_print "#           QQ群: 172952046             "
 ui_print "########################################"
 ui_print " "
 

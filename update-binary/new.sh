@@ -25,9 +25,13 @@ $BOOTMODE || ps -A 2>/dev/null | grep zygote | grep -v grep >/dev/null && BOOTMO
 
 ui_print "==========================================="
 ui_print "    The update-binary by 亦魔/Yemon     "
-ui_print "         build A.cc2024????             "
+ui_print "         build A.cc20240516             "
 ui_print "      此包永久免费，请不要上当受骗        "
 ui_print " The package is free, don't be tricked  "
+ui_print "==========================================="
+ui_print "   QQ/Email: 248807316/ACEyimo@qq.com    "
+ui_print "            QQ群: 172952046             "
+ui_print "      URL: Easy-aToWin.ACEyimo.cn         "
 ui_print "==========================================="
 ui_print " "
 sleep 1

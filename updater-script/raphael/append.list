@@ -1,0 +1,5 @@
+# 用来储存型号的追加版本
+# Used to store the supplementary version of the model
+part_version=""
+flash_version=""
+reset_version=""
