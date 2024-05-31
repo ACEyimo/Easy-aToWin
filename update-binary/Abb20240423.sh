@@ -1,5 +1,5 @@
 #!/sbin/sh
- 
+
 OUTFD=/proc/self/fd/$2
 ZIPFILE="$3"
 
