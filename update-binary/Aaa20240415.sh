@@ -320,7 +320,7 @@ flash_img() {
 
 # 没写完
 write_config() {
- return 66 || abort "这是一个空函数，this is a empty function"
+  return 66 || abort "这是一个空函数，this is a empty function"
 }
 
 ui_print "--------------------------------------------------"
@@ -333,4 +333,3 @@ ui_print "Cleaning package cache..."
 sleep 0.5
 ui_print "执行完毕，Execution completed"
 exit 0
-

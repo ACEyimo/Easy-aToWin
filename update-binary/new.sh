@@ -407,7 +407,7 @@ re_part() {
     ((a_number++))
     re_auto_error=0
     while [ $a_number -le $re_maxnuber ]; do
-    ui_print "正在删除分区${a_number}，Deleting partition ${a_number}"
+      ui_print "正在删除分区${a_number}，Deleting partition ${a_number}"
       ${TOOLPATH}sgdisk --delete=${a_number} ${DISKPATH} || ((re_auto_error++))
       sleep 0.5
       ((a_number++))
@@ -422,7 +422,7 @@ re_part() {
     ${TOOLPATH}parted ${DISKPATH} -s mkpart userdata ext4 ${re_userdata_start} 100% i || return 77
   }
 
-# 此函数未测试
+  # 此函数未测试
   re_run_sgdisk() {
     ${TOOLPATH}umount -A /dev/block/by-name/esp
     rm -rf /tmp/esp/
