@@ -7,7 +7,8 @@ ui_print "########################################"
 ui_print " "
 
 PRODUCT="enchilada"
-# 部分型号和特殊情况可能无法获取正确代号，需要设置第二参数。Some models or scenarios might not retrieve the correct code, a second argument needs to be set.
+# 部分型号和特殊情况可能无法获取正确代号，需要设置第二参数。
+# Some models or scenarios might not retrieve the correct model, a second argument needs to be set.
 PRODUCT2="OenPlus6"
 
 assert_product "$PRODUCT" || assert_product "$PRODUCT2" || abort "检查机型错误，Your device is not $PRODUCT"
@@ -15,16 +16,23 @@ assert_equal ${FILE_NAME[1]} "$PRODUCT" || assert_equal ${FILE_NAME[1]} "$PRODUC
 assert_equal "part" "${FILE_NAME[0]}" || abort "检查刷机包类型错误，This is not Part package"
 sleep 1
 
+################################################
+# 这里插入特殊机型和占位符的脚本
+# Insert script for special models and placeholders here
 #################################################
-
+# 通用脚本，一般情况下无需修改
+# The script is universal and typically requires no modification
 ui_print "- 正在分区中...."
 ui_print "- partitioning..."
 
 run_part_tool || abort "分区失败！Partition failed!"
 sleep 1
 ################################################
-# 这里插入针对机型的脚本
-if assert_equal "${FILE_NAME[3]}" "via" ; then
+# 这里插入特殊机型和占位符的脚本
+# Insert script for special models and placeholders here
+ui_print "分区完成，请重启到recovery，并格式化data分区！"
+ui_print "partition done,reboot to recovery and format userdata!"
+if assert_equal "${FILE_NAME[3]}" "via"; then
     ui_print "- 正在发送via到系统..."
     ui_print "- Send via to system..."
     rm -rf /tmp/system
@@ -42,6 +50,5 @@ if assert_equal "${FILE_NAME[3]}" "via" ; then
     ui_print " "
 fi
 ################################################
-
 ui_print "分区完成，请重启到recovery，并格式化data分区！"
 ui_print "partition done,reboot to recovery and format userdata!"
