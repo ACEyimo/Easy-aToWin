@@ -1,2 +1,7 @@
-part via.apk
-flash boot-fajita-v2.0rc2.img
+part_data=(
+    via.apk
+)
+flash_data=(
+    boot-fajita-v2.0rc2.img
+)
+reset_data=()

@@ -1,5 +1,10 @@
-flash xiaomi-raphael.img
-reset sgdisk-64G.bak
-reset sgdisk-128G.bak
-reset sgdisk-256G.bak
-reset sgdisk-512G.bak
+part_data=()
+flash_data=(
+    xiaomi-raphael.img
+)
+reset_data=(
+    sgdisk-64G.bak
+    sgdisk-128G.bak
+    sgdisk-256G.bak
+    sgdisk-512G.bak
+)

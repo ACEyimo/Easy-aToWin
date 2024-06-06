@@ -1,5 +1,7 @@
-# 这一段不用删除，也不需要修改。
-# 使用方法：第一列是需要放置到什么包（part flash reset）里，第二列为文件名。
-# 不需要可以排序，随便插入就可以。所需文件毕竟很少，不影响后续维护（如果文件的特殊性比较复杂，我建议在文件的下一行插入不包含part flash reset 字符的说明）。
-# 示例：
-flash boot.img
+# 采用bash数组形式储存数据，只填写文件名称即可，只会复制 data/代号/ 目录下的文件。flash包会统一复制efi.tar
+# Using the bash array form to store data, only fill in the file name, only the files in the data/paroduct/ directory will be copied. The flash package will be unified copied efi.tar
+part_data=()
+flash_data=(
+    boot.img
+)
+reset_data=()

@@ -1,0 +1,5 @@
+part_data=()
+flash_data=(
+    boot.img
+)
+reset_data=()

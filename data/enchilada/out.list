@@ -1,2 +1,7 @@
-part via.apk
-flash boot-enchilada-v2.0rc2.img
+part_data=(
+    via.apk
+)
+flash_data=(
+    boot-enchilada-v2.0rc2.img
+)
+reset_data=()
