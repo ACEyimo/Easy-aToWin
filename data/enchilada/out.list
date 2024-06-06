@@ -4,4 +4,7 @@ part_data=(
 flash_data=(
     boot-enchilada-v2.0rc2.img
 )
-reset_data=()
+reset_data=(
+    sgdisk-128G.bak
+    sgdisk-256G.bak
+)

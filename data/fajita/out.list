@@ -1,6 +1,7 @@
 part_data=(
     via.apk
 )
+# 这里面存在的sgdisk备份是一加6的。理论上说两个应该通用，但是我没有测试所以就没放进去
 flash_data=(
     boot-fajita-v2.0rc2.img
 )

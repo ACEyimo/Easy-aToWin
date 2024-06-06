@@ -30,8 +30,6 @@ sleep 1
 ################################################
 # 这里插入特殊机型和占位符的脚本
 # Insert script for special models and placeholders here
-ui_print "分区完成，请重启到recovery，并格式化data分区！"
-ui_print "partition done,reboot to recovery and format userdata!"
 if assert_equal "${FILE_NAME[3]}" "via"; then
     ui_print "- 正在发送via到系统..."
     ui_print "- Send via to system..."
