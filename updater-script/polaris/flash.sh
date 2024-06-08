@@ -26,10 +26,10 @@ sleep 1
 ui_print "- Windows 安装中..."
 ui_print "- Windows installing..."
 
-# install_win || abort "Windows 安装失败！Windows install failed"
-# sleep 1
-# bak_android_boot || abort "备份Android boot失败，backup android boot failed"
-# flash_img "boot$(get_ab)" "$boot_name" || abort "刷入boot失败，flash boot failed"
+install_win || abort "Windows 安装失败！Windows install failed"
+sleep 1
+bak_android_boot || abort "备份Android boot失败，backup android boot failed"
+flash_img "boot$(get_ab)" "$boot_name" || abort "刷入boot失败，flash boot failed"
 sleep 1
 ################################################
 function flash_devcfg() {
