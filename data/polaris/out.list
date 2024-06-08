@@ -1,8 +1,9 @@
 part_data=()
 flash_data=(
-    boot-polaris-2301.1.img
+    boot-polaris-audio.img
     boot-polaris-v2.0rc2.img
     devcfg-polaris.img
+    re_modem.sh
 )
 reset_data=(
     sgdisk-256G.bak
