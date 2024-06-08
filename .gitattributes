@@ -1,5 +1,5 @@
-.gitattributes text eol=lf
-.gitignore  text eol=lf
-*.md text eol=lf
-*.sh text eol=lf
-*.list text eol=lf
+.gitattributes text eol=lf encoding=utf-8
+.gitignore text eol=lf encoding=utf-8
+*.md text eol=lf encoding=utf-8
+*.sh text eol=lf encoding=utf-8
+*.list text eol=lf encoding=utf-8
