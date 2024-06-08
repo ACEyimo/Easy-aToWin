@@ -229,7 +229,7 @@ function make_zip() {
   fi
   if $(uname -m | grep -qie "aarch64|arm64"); then
     chmod +x ${WORKPATH}bin/7zzs-arm64
-    ${WORKPATH}bin/7zzs-arm64a -tzip -mmt ${output_file} ${WORKPATH}temp/*
+    ${WORKPATH}bin/7zzs-arm64 a -tzip -mmt ${output_file} ${WORKPATH}temp/*
     rm -rf ${WORKPATH}temp
     return 0
   fi

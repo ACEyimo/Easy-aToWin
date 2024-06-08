@@ -25,7 +25,7 @@ $BOOTMODE || ps -A 2>/dev/null | grep zygote | grep -v grep >/dev/null && BOOTMO
 
 ui_print "==========================================="
 ui_print "    The update-binary by 亦魔/Yemon     "
-ui_print "         build A.cd20240604             "
+ui_print "         build A.cd20240608             "
 ui_print "      此包永久免费，请不要上当受骗        "
 ui_print " The package is free, don't be tricked  "
 ui_print "==========================================="
@@ -194,21 +194,21 @@ run_part_tool() {
   # 调整userdata分区大小
   ui_print "- 正在调整userdata分区大小..."
   ui_print "- Adjusting userdata partition size..."
-  ${TOOLPATH}parted ${DISKPATH} resizepart "${userdata_info[0]}" yes "${userdata_info[3]}GB" yes yes
+  ${TOOLPATH}parted ${DISKPATH} resizepart "${userdata_info[0]}" yes "${userdata_info[3]}GB" yes 3&>/dev/null
   sleep 1
 
   # 判断分区是否与预设值一致，否则执行无`yes`参数的命令
   if [[ "$(get_userdata_end)" == "${userdata_old_end}" ]]; then
     ui_print "- 调整userdata分区失败，尝试备选方案..."
     ui_print "- Adjusting userdata partition failed,try alternative solution..."
-    ${TOOLPATH}parted ${DISKPATH} resizepart ${userdata_info[0]} ${userdata_info[3]}GB yes
+    ${TOOLPATH}parted ${DISKPATH} resizepart ${userdata_info[0]} ${userdata_info[3]}GB yes 3&>/dev/null
     if [[ "$(get_userdata_end)" == "${userdata_old_end}" ]]; then
-      ${TOOLPATH}parted ${DISKPATH} resizepart ${userdata_info[0]} ${userdata_info[3]}GB
+      ${TOOLPATH}parted ${DISKPATH} resizepart ${userdata_info[0]} ${userdata_info[3]}GB 3&>/dev/null
       if [[ "$(get_userdata_end)" == "${userdata_old_end}" ]]; then
         ui_print "- 备选方案失败，尝试删除后重建分区...."
         ui_print "- alternative solution failed, try to rebuild partition..."
-        ${TOOLPATH}parted ${DISKPATH} rm ${userdata_info[0]} yes
-        ${TOOLPATH}parted ${DISKPATH} mkpart userdata ext4 ${userdata_info[2]}GB ${userdata_info[3]}GB
+        ${TOOLPATH}sgdisk ${DISKPATH} /dev/block/sda -d=${userdata_info[0]}
+        ${TOOLPATH}parted ${DISKPATH} mkpart userdata ext4 ${userdata_info[2]}GB ${userdata_info[3]}GB 3&>/dev/null
         if [[ "$(get_userdata_end)" == "${userdata_old_end}" ]]; then
           return 31
         fi
@@ -242,14 +242,14 @@ run_part_tool() {
 
 # 在指定目录中查找'windata.wim'文件，或作为备选查找以'mtip'结尾的文件。仅输出找到的第一个文件。
 find_windata() {
-  local windata=$(echo "${FILE_NAME[2]}-${FILE_NAME[1]}")
+  local windata=${FILE_NAME[2]}
   DIRS=(/usbstorage/ /sdcard/ /sdcard/Download/)
 
   i=0
   while [ $i -lt ${#DIRS[@]} ]; do
     dir="${DIRS[$i]}"
     bv=true
-    ls $dir | grep ${windata} | grep '.wim$' >/dev/null || bv=false
+    ls $dir | grep ${windata} | grep '.wim$' | grep "${FILE_NAME[1]}" >/dev/null || bv=false
     if $bv; then
       echo "${dir}$(ls $dir | grep ${windata} | grep '.wim$' | head -n1)"
       return 0
