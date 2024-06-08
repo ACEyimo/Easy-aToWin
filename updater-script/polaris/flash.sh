@@ -13,7 +13,8 @@ PRODUCT2=""
 # 设置刷入的 boot 镜像名字
 # Set the name of the boot image to be flashed
 boot_name="boot-polaris-v2.0rc2.img"
-echo ${FILE_NAME[3]} | grep -qiE "audio|音频|声音" && boot_name="boot-polaris-audio.img"
+echo ${FILE_NAME[2]} | grep -qiE "audio|音频|声音" && boot_name="boot-polaris-audio.img"
+echo ${FILE_NAME[2]} | grep -qiE "audio|音频|声音" && ui_print "- 使用音频版 UEFI 镜像，Use audio version UEFI image."
 
 assert_product "$PRODUCT" || assert_product "$PRODUCT2" || abort "检查机型错误，Your device is not $PRODUCT"
 assert_equal ${FILE_NAME[1]} "$PRODUCT" || assert_equal ${FILE_NAME[1]} "$PRODUCT2" || abort "刷机包和机型不匹配，This package is only suitable for $PRODUCT"
@@ -88,7 +89,7 @@ function bak_modem() {
 }
 
 case ${FILE_NAME[3]} in
-"modem") bak_modem ;;
+"modem") bak_modem || abort "基带备份失败，Modem backup failed" ;;
 "devcfg") flash_devcfg ;;
 "all")
     flash_devcfg
