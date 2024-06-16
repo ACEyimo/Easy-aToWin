@@ -1,0 +1,11 @@
+part_data=()
+flash_data=(
+    boot-dipper.img
+    devcfg-dipper.img
+    re_modem.sh
+)
+reset_data=(
+    sgdisk-64G.bak
+    sgdisk-128G.bak
+    sgdisk-256G.bak
+)
