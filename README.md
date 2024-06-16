@@ -1,7 +1,7 @@
 # Easy-aToWin
 骁龙845/855等机型从安卓到windows的刷机包
 
->此文档是ReadMe.md的简体中文版，无需重复阅读
+> Click [here](./README-en.md) for English instructions.
 
 ----
 
